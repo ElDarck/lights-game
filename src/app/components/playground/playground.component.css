@@ -88,6 +88,8 @@
 
 .playground-field{
   display: grid;
+  justify-items: center;
+  align-items: center;
   grid-template-columns: repeat(10, 49px);
   grid-gap: 2px;
   margin: 9px 0 0 5px;
@@ -97,16 +99,95 @@
   height: 47px;
   border: 1px solid black;
   background: rgba(148,187,233,1);
+  border-radius: 5px;
 }
 
 .cell.chose {
+  width: 45px;
+  height: 45px;
   background: yellow;
+  transition: all 0.13s linear;
 }
 
 .cell.win {
+  width: 42px;
+  height: 42px;
   background: green;
+  border: 2px solid #015901;
+  transition: all 0.15s linear;
 }
 
 .cell.lose {
   background: red;
+  border: 2px solid #b60000;
+  width: 40px;
+  height: 40px;
+  transition: all 0.15s linear;
+}
+
+.modal-window {
+  display: block;
+}
+
+.modal-shadow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  background: rgb(49, 43, 46, 0.966);
+}
+
+.modal-shadow:hover {
+  background: rgb(49, 43, 46, 0.6);
+}
+
+.modal-message {
+  display: block;
+  position: fixed;
+  top: 30%;
+  left: 30%;
+  right: 30%;
+  bottom: 30%;
+  padding: 25px;
+  z-index: 1005;
+  background: rgba(84, 30, 57, 1);
+  border: 2px solid black;
+  border-radius: 15px;
+}
+
+.winner-is {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  color: #FFFFFF;
+  font-size: 38px;
+}
+
+.scores {
+  display: block;
+  margin: 50px auto;
+  text-align: center;
+  color: #FFFFFF;
+  font-size: 34px;
+}
+
+.new-game {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.new-game button {
+  width: 200px;
+  padding: 15px 0;
+  color: #FFFFFF;
+  background: #337599;
+  border-radius: 29px;
+  font-size: 24px;
+}
+
+.new-game button:hover {
+  background: #4596c2;
 }

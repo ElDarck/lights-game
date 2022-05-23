@@ -14,7 +14,10 @@
       <div class="playground-settings">
         <span class="game-speed">
           <label>
-            <input [disabled]="inGame" type="number" (blur)="updateInputValue($event)" placeholder="Set speed">
+            <input [disabled]="inGame" type="number"
+                   [value]="gameSpeed"
+                   (blur)="updateInputValue($event)"
+                   placeholder="Set speed">
           </label>
           <button (click)="startGame()" [disabled]="inGame || gameSpeed === 0">
             <span *ngIf="!inGame && gameSpeed > 0">START</span>
@@ -33,8 +36,23 @@
            [class.win]="cell.win"
            [class.lose]="cell.lose"
            class="cell"
-           (click)="cellClick($event)">{{cell.id}}</div>
+           (click)="cellClick($event)"></div>
     </div>
 
+  </div>
+</div>
+
+
+<div class="modal-window" *ngIf="win">
+  <div class="modal-shadow" (click)="restart()"></div>
+  <div class="modal-message" [style.background]="playerScore === 10 ? 'rgba(27, 117, 50, 1)' : 'rgba(84, 30, 57, 1)'">
+    <div class="winner-is">
+      <span *ngIf="playerScore === 10">You Win!</span>
+      <span *ngIf="computerScore === 10">You Lose! )))</span>
+    </div>
+    <div class="scores">You scores: {{playerScore}}</div>
+    <div class="new-game">
+      <button (click)="restart()">New Game?</button>
+    </div>
   </div>
 </div>
