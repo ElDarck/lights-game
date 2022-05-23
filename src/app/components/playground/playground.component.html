@@ -1,0 +1,40 @@
+<div class="playground-wrapper">
+  <div class="loading" *ngIf="loading">LOADING...</div>
+  <div class="playground-main" *ngIf="!loading">
+
+    <div class="playground-rules">
+
+      <div class="playground-scores-players">
+        <span class="player-scores">Player SCORES: {{playerScore}}</span>
+      </div>
+      <div class="playground-scores-players">
+        <span class="computer-scores">Computer SCORES: {{computerScore}}</span>
+      </div>
+
+      <div class="playground-settings">
+        <span class="game-speed">
+          <label>
+            <input [disabled]="inGame" type="number" (blur)="updateInputValue($event)" placeholder="Set speed">
+          </label>
+          <button (click)="startGame()" [disabled]="inGame || gameSpeed === 0">
+            <span *ngIf="!inGame && gameSpeed > 0">START</span>
+            <span *ngIf="inGame">IN GAME</span>
+             <span *ngIf="gameSpeed < 1">SET SPEED</span>
+          </button>
+        </span>
+      </div>
+
+    </div>
+
+    <div class="playground-field">
+      <div *ngFor="let cell of allCells"
+           [attr.data-cell]="cell.id"
+           [class.chose]="currentCell === cell.id"
+           [class.win]="cell.win"
+           [class.lose]="cell.lose"
+           class="cell"
+           (click)="cellClick($event)">{{cell.id}}</div>
+    </div>
+
+  </div>
+</div>

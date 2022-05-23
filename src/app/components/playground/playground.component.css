@@ -1,0 +1,112 @@
+.playground-wrapper {
+  display: flex;
+  min-width: 320px;
+  width: 520px;
+  height: 625px;
+  background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+  margin: 5% auto 0 auto;
+  border-radius: 15px;
+  box-shadow: 0 0 8px 5px;
+}
+
+.loading {
+  display: block;
+  margin: 10% auto 0 auto;
+  font-size: 32px;
+}
+
+.playground-main {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  border: 1px solid black;
+  border-radius: 15px;
+}
+
+.playground-rules {
+  display: block;
+  width: 100%;
+  height: 120px;
+}
+
+.playground-settings {
+  display: block;
+  height: 40px;
+  padding: 5px 40px;
+  font-size: 30px;
+}
+.game-speed {
+  display: block;
+  height: 40px;
+}
+
+.game-speed label {
+  display: inline-block;
+  height: 30px;
+  width: 60%;
+  font-size: 16px;
+  margin-right: 20px;
+}
+
+.game-speed label input {
+  display: block;
+  height: 30px;
+  width: 120px;
+  font-size: 20px;
+  padding: 10px 1px 10px 15px;
+  border-radius: 12px;
+}
+
+.game-speed label input:focus {
+  background: antiquewhite;
+  outline: none;
+}
+
+.game-speed button {
+  display: inline-block;
+  width: 120px;
+  height: 30px;
+  border-radius: 11px;
+  background: greenyellow;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.playground-scores-players {
+  display: block;
+  height: 40px;
+  padding: 5px 40px;
+  font-size: 30px;
+  color: white;
+  text-shadow: 0 0 5px black;
+}
+.player-scores {}
+.computer-scores {}
+
+.playground-field{
+  display: grid;
+  grid-template-columns: repeat(10, 49px);
+  grid-gap: 2px;
+  margin: 9px 0 0 5px;
+}
+.cell {
+  width: 47px;
+  height: 47px;
+  border: 1px solid black;
+  background: rgba(148,187,233,1);
+}
+
+.cell.chose {
+  background: yellow;
+}
+
+.cell.win {
+  background: green;
+}
+
+.cell.lose {
+  background: red;
+}
